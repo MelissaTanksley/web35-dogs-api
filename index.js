@@ -29,10 +29,51 @@ server.get('/dogs', (req,res) => {
     }
 })
 
+// Get 1 dog
+
+server.get('/dogs/:id', (req, res) => {
+    const { id } = req.params
+    const findDogById = dog => {
+        return dog.id == id
+    }
+    const foundDog = dogs.find(findDogById)
+    if (!foundDog) {
+        res.status(400).json({ errorMessage: 'Can not find a dog with that ID'})
+    } else {
+        res.json(foundDog)
+    }
+})
+
+// Add new Dogs
+
+server.post('/dogs', (req,res) => {
+    const newDog = req.body
+    if(!(newDog.breed)) {
+        res.status(400).json({ errorMessage: 'Please make sure you have a breed listed'})
+    } try {
+        const notNew = dogs.find(dog => dog.breed === req.body.breed)
+        if(!notNew) {
+            newDog.id = uuid.v4()
+            dogs.push(newDog)
+            res.status(201).json({ errorMessage: 'Added new dog', newDog})
+        } else {
+            res.status(400).json({ errorMessage: 'Dog is already on server'})
+        }
+    }
+    catch {
+        res.status(500).json({ errorMessage: 'Dang it, Somethings broke on the server here'})
+    }
+})
+
+
+// Base URL
 
 server.use('/', (req,res) => {
     res.status(200).json({ message: 'Hello Lambda Students'})
 })
+
+
+// Spins up server
 
 // const PORT = 5000
 const PORT = process.env.PORT || 5000
