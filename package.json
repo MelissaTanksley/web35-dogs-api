@@ -19,9 +19,11 @@
   },
   "homepage": "https://github.com/web35-node/web35-dogs-api#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "cross-env": "^7.0.2",
     "nodemon": "^2.0.6"
   }
 }
