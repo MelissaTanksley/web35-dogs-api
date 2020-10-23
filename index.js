@@ -13,7 +13,7 @@ let dogs = [
     {
         id: uuid.v4(),
         breed: 'German Shepard',
-        imageUrl: 'https://en.wikipedia.org/wiki/German_Shepherd#/media/File:German_Shepherd_-_DSC_0346_(10096362833).jpg'
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/d/d0/German_Shepherd_-_DSC_0346_%2810096362833%29.jpg'
     }
 ]
 
