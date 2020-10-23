@@ -1,0 +1,26 @@
+{
+  "name": "web35-dogs-api",
+  "version": "1.0.0",
+  "description": "API for Dogs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/web35-node/web35-dogs-api.git"
+  },
+  "author": "Melissa Longenberger",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/web35-node/web35-dogs-api/issues"
+  },
+  "homepage": "https://github.com/web35-node/web35-dogs-api#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
